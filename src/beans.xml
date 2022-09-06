@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+  
+<bean id="emp" class="bean.Employee" autowire="byType">
+	<!-- <constructor-arg index="0" value="101" />
+	<constructor-arg index="1" value="Nisha" />
+	<constructor-arg index="2" value="980000" />
+	<constructor-arg index="3">
+		<list>
+			<value>Java Project</value>
+			<value>Spring Project</value>
+		</list>
+	</constructor-arg>
+	<constructor-arg index="4">
+		<map>
+			<entry key="Home_Address" value-ref="address1" />
+			<entry key="Office_Address" value-ref="address2" />
+		</map>
+	</constructor-arg>
+	<constructor-arg index="5">
+		<list>
+			<ref bean="contact1"/>
+			<ref bean="contact2"/>
+		</list>
+	</constructor-arg> -->
+	<property name="id" value="101" />
+	<property name="name" value="Swara" />
+	<property name="salary" value="980000" />
+	<property name="projects">
+		<list>
+			<value>Java Project</value>
+			<value>Spring Project</value>
+		</list>
+	</property>
+</bean>
+
+<bean id="emp1" class="bean.Employee" autowire="constructor">
+	<constructor-arg index="0" value="101" />
+	<constructor-arg index="1" value="Nisha" />
+	<constructor-arg index="2" value="980000" />
+	<constructor-arg index="3">
+		<list>
+			<value>Java Project</value>
+			<value>Spring Project</value>
+		</list>
+	</constructor-arg>	
+</bean>
+<bean id="address1" class="bean.Address">
+	<property name="street" value="Undri"/>
+	<property name="city" value="Pune" />
+</bean>
+  
+  <bean id="address2" class="bean.Address">
+	<property name="street" value="Magarpatta"/>
+	<property name="city" value="Pune" />
+</bean>
+<bean id="contact1" class="bean.ContactNumber">
+	<property name="number" value="1234567"></property>
+</bean>
+<bean id="contact2" class="bean.ContactNumber">
+	<property name="number" value="987654321"></property>
+</bean>
+<bean id="address" class="bean.Address">
+	<property name="street" value="Hadpsar"/>
+	<property name="city" value="Pune" />
+</bean>
+<bean id="person" class="bean.Person" autowire="constructor">
+	<constructor-arg index="1" value="Nisha" />
+</bean>
+
+
+	<bean id="msg" class="demo.Message">
+		<property name="msg" value="Hello From Spring App !!!" />
+	</bean>
+</beans>
